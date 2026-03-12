@@ -20,7 +20,7 @@ const CONFIG = {
     finalMessage: `Hari ini hari kamu, jadi aku mau kamu tahu kalau kamu berharga banget buat aku. Masih ada sedikit lagi yang mau aku sampein di halaman terakhir... 💕`,
     restartButton: "Restart ",
     copyButton: "Selanjutnya 💌 ",
-    linkTujuan: "https://gemini.google.com/",
+    linkTujuan: "https://luvvwawaa.my.canva.site/",
 
 };
 
