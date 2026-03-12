@@ -85,6 +85,9 @@ function navigateTo(pageNumber) {
 function handleYesClick() {
     state.hasClickedYes = true;
     navigateTo(2);
+    if (!state.musicPlaying) {
+        toggleMusic();
+    }
 }
 
 function handleNoClick() {
@@ -325,6 +328,23 @@ function initEventListeners() {
     elements.copyBtn.addEventListener('click', handleCopyMessage);
     if (elements.musicBtn) elements.musicBtn.addEventListener('click', toggleMusic);
     if (elements.envelopeWrapper) elements.envelopeWrapper.addEventListener('click', handleEnvelopeClick);
+}
+
+function toggleMusic() {
+    const music = elements.bgMusic;
+    const btn = elements.musicBtn;
+
+    if (state.musicPlaying) {
+        music.pause();
+        btn.classList.remove('playing');
+        state.musicPlaying = false;
+    } else {
+        music.play().catch(error => {
+            console.log("Autoplay diblokir browser, perlu klik manual:", error);
+        });
+        btn.classList.add('playing');
+        state.musicPlaying = true;
+    }
 }
 
 function initMouseTrail() {
